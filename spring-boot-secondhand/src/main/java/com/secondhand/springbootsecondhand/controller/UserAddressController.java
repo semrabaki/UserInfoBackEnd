@@ -19,21 +19,6 @@ public class UserAddressController {
         this.userAddressService = userAddressService;
     }
 
-    @GetMapping
-    public ResponseEntity<List<UserAddressDto>> getAllUserAddress(){
-        return ResponseEntity.ok(userAddressService.getAllUserAddress());
-    }
-
-    @PostMapping
-    public ResponseEntity<UserAddressDto> createUserAddress(@RequestBody CreateUserAddressRequest request){
-        return ResponseEntity.ok(userAddressService.createUserAddress(request));
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<UserAddressDto> updateUserDetails(@PathVariable Long id,
-                                                            @RequestBody UpdateUserAddressRequest request){
-        return ResponseEntity.ok(userAddressService.updateUserDetails(id, request));
-    }
 
     @DeleteMapping
     public ResponseEntity<Void> deleteUserDetails(@PathVariable Long id){
